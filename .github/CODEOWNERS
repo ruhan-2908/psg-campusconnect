@@ -8,7 +8,7 @@
 /database/ @varshinii15
 
 # Incharge for files at outer circle
-/.github/CODEOWNERS @ruhan-2908
+/.github/ @ruhan-2908
 LICENSE @ruhan-2908
 README.md @ruhan-2908
 .gitignore @ruhan-2908
