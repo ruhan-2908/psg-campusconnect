@@ -7,8 +7,8 @@
 # Database team
 /database/ @varshinii15
 
-# Incharge for CODEOWNERS file itself
+# Incharge for files at outer circle
 /.github/CODEOWNERS @ruhan-2908
-
-# Other changes
-* @ruhan-2908
+LICENSE @ruhan-2908
+README.md @ruhan-2908
+.gitignore @ruhan-2908
