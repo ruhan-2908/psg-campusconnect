@@ -64,13 +64,13 @@ feature/yourname/module
 - **Clone the repo (develop branch):**
 
 ```
-git clone -b develop https://github.com/ruhan-2908/psg-campusconnect.git
+git clone https://github.com/ruhan-2908/psg-campusconnect.git
 cd psg-campusconnect
 ```
 
  - **Create a feature branch:**
 ```
-git checkout -b feature/<your-name>/<module-name> (examples mentioned above)
+git branch feature/<your-name>/<module-name> develop (examples mentioned above)
 ```
 
  - **Add your files in the correct folder:**
@@ -116,7 +116,6 @@ On GitHub: Click “Delete branch” button after merge.
 Or Locally:
 ```
 git branch -d <your_feature_branch_name>   # delete local branch
-git fetch -p # prune deleted remote branches
 ```
 Note: Only delete after the PR is merged and approved.
 
