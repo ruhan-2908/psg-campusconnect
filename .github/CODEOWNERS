@@ -2,10 +2,13 @@
 /backend/ @ruhan-2908
 
 # Frontend team
-/frontend/ @subhasreelk
+/frontend/ @subhasreelk 
 
 # Database team
 /database/ @varshinii15
 
 # Incharge for CODEOWNERS file itself
 /.github/CODEOWNERS @ruhan-2908
+
+# Other changes
+* @ruhan-2908
