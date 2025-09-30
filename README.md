@@ -1,8 +1,8 @@
-# PSG Notice Board Project 🏫
+# PSG Progress Tracker
 
 **Description:**  
 
-This is a collaborative web-based **Notice Board + Event Tracker + Q&A platform** for PSG College.  
+This is a collaborative web-based **Academic Progress tracker for CAT and Semester exams** for PSG College.  
 The project follows a structured Git workflow to ensure smooth development, code quality, and collaboration among our team of 9 members.
 
 ---
