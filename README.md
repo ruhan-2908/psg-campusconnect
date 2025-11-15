@@ -150,4 +150,3 @@ git checkout <your_feature_branch_name>
 ---
 
 Let’s maintain a professional, organized, and collaborative environment for this project. 
-
