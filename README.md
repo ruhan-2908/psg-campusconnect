@@ -2,36 +2,46 @@
 
 **Description:**  
 
-This is a collaborative web-based **Academic Progress tracker for CAT and Semester exams** for PSG College.  
+This is a collaborative web-based **Academic Progress tracker for CAT and Semester exams**. 
 The project follows a structured Git workflow to ensure smooth development, code quality, and collaboration among our team of 9 members.
 
 ---
 
-## 👥 Team Overview
+## API Endpoints Overview
 
-| Team     | Lead          | Member(s)                        |
-|----------|---------------|----------------------------------|
-| Backend  | Ruhan         | Kavin, Nithish, Pravinthaa       |
-| Frontend | Subhasree     | Mythili, Pavithra                |
-| Database | Sri Varshini  | Nithish Kumar                    |
+**Auth**
 
+- POST /api/auth/login – Student login
 
----
+- POST /api/auth/logout – Student logout
 
-## 📁 Repository Structure
+- GET /api/auth/me – Get logged-in student info
 
-backend/ ← Backend code (API, server, auth,..)  
+**Marks**
 
-frontend/ ← Frontend code (UI, components,..)  
+- GET /api/marks – Fetch CAT/semester marks (from eCampus or cache)
 
-database/ ← Database scripts, schemas,..  
+- POST /api/marks/expected – Save expected marks for predictions
 
-README.md ← Project instructions  
+**Predictions**
 
-.gitignore ← Ignored files  
+- GET /api/predictions – Fetch predicted GPA & weak subjects
 
-LICENSE ← MIT License
+- POST /api/predictions/compute – Compute predictions using actual + expected marks
 
+**Subject / Semester Analytics**
+
+- GET /api/predictions/subject/:subjectId – Prediction for a particular subject
+
+- GET /api/dashboard/semester/:semesterId – Semester-wise analytics
+
+- GET /api/dashboard/subject/:subjectId – Subject-level analytics
+
+**Dashboard + Reports**
+
+- GET /api/dashboard – Complete dashboard (GPA trend, weak subjects, charts)
+
+- GET /api/reports/download – Download academic report as PDF
 
 ---
 
@@ -140,4 +150,3 @@ git checkout <your_feature_branch_name>
 ---
 
 Let’s maintain a professional, organized, and collaborative environment for this project. 
-
