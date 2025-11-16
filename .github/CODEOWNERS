@@ -1,8 +1,10 @@
-# Frontend team
+# Frontend team 
 /frontend/ @subhasreelk
+/frontend/**/* @subhasreelk
 
-# Backend team
+# Backend team  
 /backend/ @varshinii15 @ruhan-2908
+/backend/**/* @varshinii15 @ruhan-2908
 
 # all root configuration files
 /.github/ @ruhan-2908
