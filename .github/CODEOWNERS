@@ -14,14 +14,6 @@
 /backend/**/* @varshinii15 @ruhan-2908
 
 
-# ========================
-# DATABASE OWNERSHIP
-# ========================
-/database @varshinii15
-/database/ @varshinii15
-/database/**/* @varshinii15
-
-
 # =============================
 # ROOT-LEVEL CONFIG OWNERSHIP
 # =============================
