@@ -1,1 +1,11 @@
-* @ruhan-2908
+# Frontend team
+/frontend/ @subhasreelk
+
+# Backend team
+/backend/ @varshinii15 @ruhan-2908
+
+# all root configuration files
+/.github/ @ruhan-2908
+.gitignore @ruhan-2908
+LICENSE @ruhan-2908
+README.md @ruhan-2908
