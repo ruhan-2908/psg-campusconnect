@@ -2,17 +2,14 @@
 # FRONTEND TEAM OWNERSHIP
 # ========================
 /frontend @subhasreelk
-/frontend/ @subhasreelk
-/frontend/**/* @subhasreelk
+/frontend/** @subhasreelk
 
 
 # ========================
 # BACKEND TEAM OWNERSHIP
 # ========================
 /backend @varshinii15 @ruhan-2908
-/backend/ @varshinii15 @ruhan-2908
-/backend/**/* @varshinii15 @ruhan-2908
-
+/backend/** @varshinii15 @ruhan-2908 
 
 # =============================
 # ROOT-LEVEL CONFIG OWNERSHIP
