@@ -25,4 +25,4 @@ const AnalyticsSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Analytics', AnalyticsSchema);
- 
+ //testrun
