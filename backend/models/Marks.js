@@ -5,7 +5,6 @@ const MarksSchema = new mongoose.Schema({
   subjectId: { type: mongoose.Schema.Types.ObjectId, ref: 'Subject', required: true },
   semesterId: { type: mongoose.Schema.Types.ObjectId, ref: 'Semester', required: true },
   
-  //git test
   at1: { type: Number }, 
   at2: { type: Number }, 
   ap: { type: Number },
