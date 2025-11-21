@@ -9,9 +9,10 @@ require('./models/Semester');
 require('./models/Subject');
 require('./models/Marks');
 require('./models/Predictions');
-
+require('./models/Attendance');
 
 const predictionsRouter = require('./routes/predictionsRoutes');
+const dashboardRouter = require('./routes/dashboardRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,7 +23,7 @@ app.use(cors());
 
 
 app.use('/api/predictions', predictionsRouter);
-
+app.use('/api/dashboard', dashboardRouter);
 
 app.get('/health', (req, res) => {
   res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
