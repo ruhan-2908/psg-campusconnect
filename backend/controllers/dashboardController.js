@@ -143,3 +143,92 @@ exports.getSemesterAnalytics = async (req, res) => {
     return res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+
+
+exports.getSubjectAnalytics = async (req, res) => {
+  const { subjectId } = req.params;
+
+  try {
+    if (!subjectId) {
+      return res.status(400).json({ message: "Subject ID is required" });
+    }
+
+    
+    const subject = await Subject.findById(subjectId).lean();
+    if (!subject) {
+      return res.status(404).json({ message: "Subject not found" });
+    }
+
+    
+    const marks = await Marks.find({ subjectId }).lean();
+
+    const studentCount = marks.length;
+
+    let avgScore = null, maxScore = null, minScore = null, passRate = null;
+
+    if (studentCount > 0) {
+      const totalScores = marks.map(m => m.total);
+
+      avgScore = (totalScores.reduce((a, b) => a + b, 0) / studentCount).toFixed(2);
+      maxScore = Math.max(...totalScores);
+      minScore = Math.min(...totalScores);
+
+      const passCount = marks.filter(m => m.total >= 40).length;
+      passRate = ((passCount / studentCount) * 100).toFixed(2);
+    }
+
+    
+    const trend = marks.map(m => ({
+      score: m.total
+    }));
+
+    
+    const predictions = await Prediction.find({ subjectId }).lean();
+
+    const predictionsCount = predictions.length;
+
+    
+    let avgPassProbability = null;
+    if (predictionsCount > 0) {
+      const valid = predictions.filter(p => p.passProbability !== null);
+      avgPassProbability = valid.length
+        ? (valid.reduce((sum, p) => sum + p.passProbability, 0) / valid.length * 100).toFixed(2)
+        : null;
+    }
+
+    
+    const riskCounts = {
+      safe: predictions.filter(p => p.riskLevel === "safe").length,
+      warning: predictions.filter(p => p.riskLevel === "warning").length,
+      danger: predictions.filter(p => p.riskLevel === "danger").length,
+    };
+
+    return res.json({
+      subject: {
+        id: subject._id,
+        name: subject.name,
+        code: subject.code,
+        credits: subject.credits
+      },
+      analytics: {
+        avgScore: avgScore ? parseFloat(avgScore) : null,
+        maxScore,
+        minScore,
+        passRate: passRate ? parseFloat(passRate) : null,
+        examCount: marks.length,
+        studentCount
+      },
+      trend: trend,
+      predictions: {
+        predictionsCount,
+        avgPassProbability: avgPassProbability ? parseFloat(avgPassProbability) : null,
+        riskCounts
+      }
+    });
+
+  } catch (error) {
+    console.error("getSubjectAnalytics error:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
