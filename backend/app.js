@@ -50,3 +50,4 @@ connectDB(process.env.MONGO_URI)
   });
 
 module.exports = app;
+app.use('/api/marks', require('./routes/marksRoutes'));

@@ -16,7 +16,7 @@ const MarksSchema = new mongoose.Schema({
   
   internalMarks: { type: Number }, 
   total: { type: Number }, 
-  
+  expectedMarks: { type: Number },
  
   grade: { type: String }, 
   gradePoint: { type: Number },
