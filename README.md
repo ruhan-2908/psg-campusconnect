@@ -50,9 +50,9 @@ The project follows a structured Git workflow to ensure smooth development, code
 - **Main branch (`main`)**  
   - Stable, production-ready code  
   - Contains README, LICENSE, .gitignore, and initial folders  
-  - Only merge tested code from `develop` (done by only team leads) 
+  - Only merge tested code from `development` (done by only team leads) 
 
-- **Development branch (`develop`)**  
+- **Development branch (`development`)**  
   - Active development branch  
   - Starts from `main` → inherits README, LICENSE, .gitignore, and folders  
   - All feature branches are merged here first.(via team lead review)
@@ -65,13 +65,13 @@ feature/yourname/module
 - `feature/kavin/login-api`  
 - `feature/mythili/user-login`  
 
-**Rule:** Always branch off `develop`, never `main`.
+**Rule:** Always branch off `development`, never `main`.
 
 ---
 
 ## 💻 Workflow (Step by Step)
 
-- **Clone the repo (develop branch):**
+- **Clone the repo (development branch):**
 
 ```
 git clone https://github.com/ruhan-2908/psg-campusconnect.git
@@ -80,14 +80,13 @@ cd psg-campusconnect
 
  - **Create a feature branch:**
 ```
-git branch feature/<your-name>/<module-name> develop (examples mentioned above)
+git branch feature/<your-name>/<module-name> development 
 ```
 
  - **Add your files in the correct folder:**
 
 backend/      ← backend code <br>
 frontend/     ← frontend code <br>
-database/     ← DB scripts <br>
 
  - **Commit your changes with clear messages:**
 ```
@@ -103,8 +102,6 @@ feat(backend): add login API endpoint
 
 fix(frontend): resolve navbar responsiveness  
 
-docs(database): add schema diagram  
-
 
 Refer to Conventional Commits (in github documents) for proper formatting.
 
@@ -113,7 +110,7 @@ Refer to Conventional Commits (in github documents) for proper formatting.
 git push origin <your_feature_branch_name>
 ```
 
- - **Open a Pull Request (PR) to develop:**
+ - **Open a Pull Request (PR) to development:**
 1) Wait for approval.
 2) Merge the PR after approval:
 3) Only merge after review and confirmation from the team lead.
@@ -134,9 +131,10 @@ Note: Only delete after the PR is merged and approved.
 
 Before starting new work or PR, pull the latest changes from develop:
 ```
-git checkout develop
-git pull origin develop
+git checkout development
+git pull origin development
 git checkout <your_feature_branch_name>
+git merge development -m "Merge development into feature"
 ```
 
  - **Code & Commit Best Practices:**
