@@ -134,7 +134,7 @@ Before starting new work or PR, pull the latest changes from develop:
 git checkout development
 git pull origin development
 git checkout <your_feature_branch_name>
-git merge development
+git merge development -m "Merge development into feature"
 ```
 
  - **Code & Commit Best Practices:**
